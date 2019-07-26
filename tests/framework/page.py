@@ -1,6 +1,7 @@
 from framework.element import BasePageElement
 from framework.locator import MainPageLocators
 from framework.locator import ConcertPageLocators
+import logging
 
 class SearchTextElement(BasePageElement):
     """This class gets the search text from the specified locator"""
@@ -33,9 +34,14 @@ class ConcertPage(BasePage):
 
     def bands_found(self):
         # Search for bands and return array
-        bands = []
-        for band in self.driver.find_elements(*ConcertPageLocators.CONCERT_BLOCK):
+        #bands = []
+       for band in self.driver.find_elements(*ConcertPageLocators.CONCERT_BLOCK):
             #locate logic
+            print(band)
+            logging.info(band)
             name = band.find_element(*ConcertPageLocators.BAND_NAME).text
+            
             bands.append(name)
+        bands = self.driver.find_elements(*ConcertPageLocators.CONCERT_BLOCK)
         return bands
+

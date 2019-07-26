@@ -5,5 +5,5 @@ class MainPageLocators(object):
     CONCERT_BUTTON = (By.LINK_TEXT, 'Concert Listings')
 
 class ConcertPageLocators(object):
-    CONCERT_BLOCK = (By.NAME, 'contentTitle')
+    CONCERT_BLOCK = (By.CLASS_NAME, 'contentTitle')
     BAND_NAME = (By.CSS_SELECTOR, 'itemprop="url"')
